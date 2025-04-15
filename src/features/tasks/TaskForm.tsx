@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import futuristicGradient from "@/assets/futuristic-gradient.module.css";
 import VoiceInput from "./VoiceInput";
 
@@ -151,7 +152,19 @@ export default function TaskForm({ onCreated }: { onCreated?: () => void }) {
             </button>
           ))}
         </div>
-        {imageUrl && <img src={imageUrl} alt="Task visual" className="rounded-xl mt-2 max-h-40 object-cover border border-white/10" onError={e => { (e.target as HTMLImageElement).style.display = 'none'; setError('Failed to load image'); }} />}
+        {imageUrl && (
+          <Image
+            src={imageUrl}
+            alt="Task visual"
+            className="rounded-xl mt-2 max-h-40 object-cover border border-white/10"
+            width={320} 
+            height={160} 
+            onError={() => {
+              setError('Failed to load image');
+            }}
+            style={{ objectFit: 'cover', borderRadius: '0.75rem', marginTop: '0.5rem', maxHeight: '10rem', border: '1px solid rgba(255,255,255,0.1)' }}
+          />
+        )}
       </div>
       {error && <div className="text-red-400 text-sm font-semibold">{error}</div>}
       <button className="btn bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 pl-6 px-4 rounded-xl mt-2 text-lg shadow-lg hover:scale-[1.03] transition-transform duration-200 disabled:opacity-50 flex items-center" type="submit" disabled={loading}>{loading ? (<><Spinner />Creating...</>) : "Create Task"}</button>

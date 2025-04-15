@@ -36,8 +36,12 @@ export default function Home() {
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
           </SignedIn>
-          <a href="https://github.com/anandgaddam/ai-task-planner" target="_blank" rel="noopener" className="px-6 py-3 rounded-lg bg-white text-zinc-900 font-semibold text-lg shadow transition flex items-center gap-2 justify-center">
-            <svg width="20" height="20" fill="currentColor" className="inline"><path d="M10 0C4.48 0 0 4.58 0 10.22c0 4.52 2.87 8.36 6.84 9.71.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.32 9.32 0 0 1 10 5.8c.85.004 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.58.69.48C17.13 18.58 20 14.74 20 10.22 20 4.58 15.52 0 10 0z" /></svg>
+          <Link href="/tasks" className="px-6 py-3 rounded-lg bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold text-lg shadow transition flex items-center gap-2 justify-center">
+            <svg width="20" height="20" fill="currentColor" className="inline"><path d="M5 8h10v2H5zm0 4h10v2H5z"/></svg>
+            Tasks
+          </Link>
+          <a href="https://github.com/gaddamanand/Ai-Task-Manager-1" target="_blank" rel="noopener" className="px-6 py-3 rounded-lg bg-white text-zinc-900 font-semibold text-lg shadow transition flex items-center gap-2 justify-center">
+            <svg width="20" height="20" fill="currentColor" className="inline"><path d="M10 0C4.48 0 0 4.58 0 10.22c0 4.52 2.87 8.36 6.84 9.71.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.32 9.32 0 0 1 10 5.8c.85.004 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.58.69.48C17.13 18.58 20 14.74 20 10.22 20 4.58 15.52 0 10 0z"/></svg>
             GitHub
           </a>
         </motion.div>
@@ -82,7 +86,7 @@ export default function Home() {
           <span className="inline-block bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">MIT Licensed</span>
         </motion.div>
         <footer className="text-zinc-500 text-xs mt-8">
-          <a href="https://github.com/anandgaddam/ai-task-planner" target="_blank" rel="noopener" className="underline">View on GitHub</a>
+          <a href="https://github.com/gaddamanand/Ai-Task-Manager-1" target="_blank" rel="noopener" className="underline">View on GitHub</a>
           {" • "}
           <Link href="/docs" className="underline">Docs</Link>
         </footer>
