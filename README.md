@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Task Planner
 
-## Getting Started
+![Open Source](https://img.shields.io/badge/open--source-brightgreen) ![MIT License](https://img.shields.io/badge/license-MIT-blue) [![GitHub](https://img.shields.io/badge/GitHub-Repo-black?logo=github)](https://github.com/anandgaddam/ai-task-planner)
 
-First, run the development server:
+A next-gen, open source productivity app powered by AI, voice, and beautiful UI. Plan, organize, and complete your tasks—smarter and faster.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
+- **Clerk authentication:** Secure sign up, sign in, and user management
+- **Task CRUD:** Create, edit, delete, search, and filter tasks
+- **AI-powered suggestions:** Get actionable task ideas from GPT-4
+- **Voice input:** Add tasks hands-free (ElevenLabs)
+- **AI image generation:** Visualize tasks (Fal)
+- **Drag-and-drop & bulk actions:** Organize and manage tasks efficiently
+- **Mobile-first, accessible UI:** Built with Tailwind CSS, Framer Motion
+- **Open source & MIT licensed**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Screenshots
 
-## Learn More
+![AI Task Planner Screenshot](docs/screenshot-main.png)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tech Stack
+- **Next.js 15.3** (App Router, Server Components, Suspense)
+- **React 19**
+- **Neon** (Postgres)
+- **Upstash** (Redis)
+- **Clerk** (Auth)
+- **ElevenLabs** (Voice)
+- **Fal** (Images)
+- **Vercel AI SDK** (GPT-4.1)
+- **Tailwind CSS, Framer Motion**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🏁 Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/anandgaddam/ai-task-planner.git
+   cd ai-task-planner
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+3. **Set up environment variables**
+   - Copy `.env.example` to `.env.local` and fill in your Neon, Clerk, Upstash, ElevenLabs, Fal, and OpenAI/Vercel AI keys.
+4. **Run database migrations**
+   - See `prisma/schema.prisma` or `schema.sql` for the latest schema.
+5. **Start the dev server**
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📚 Documentation
+
+- [Landing Page](https://ai-task-planner.vercel.app)
+- [Docs](./docs/)
+- [API Reference](./docs/api.md)
+- [Contributing Guide](./docs/contributing.md)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open issues or pull requests for features, bug fixes, or improvements. See [CONTRIBUTING.md](./docs/contributing.md) for details.
+
+---
+
+## 📝 License
+
+MIT — see [LICENSE](./LICENSE)
+
+---
+
+## 🙏 Acknowledgments
+
+- [Next.js](https://nextjs.org/), [Clerk](https://clerk.dev/), [Neon](https://neon.tech/), [Upstash](https://upstash.com/), [ElevenLabs](https://elevenlabs.io/), [Fal](https://fal.ai/), [OpenAI](https://openai.com/), [Vercel AI SDK](https://vercel.com/ai), [Tailwind CSS](https://tailwindcss.com/), [Framer Motion](https://www.framer.com/motion/)
+
+---
+
+> Built with ❤️ by the open source community.

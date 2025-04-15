@@ -1,0 +1,43 @@
+.glow {
+  box-shadow: 0 0 40px 8px #7f5fff55, 0 0 120px 12px #14ffe9aa;
+  border: 1.5px solid rgba(255,255,255,0.08);
+  background: linear-gradient(120deg, #232526 0%, #414345 100%);
+  animation: pulseGlow 3s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 40px 8px #7f5fff55, 0 0 120px 12px #14ffe9aa;
+  }
+  100% {
+    box-shadow: 0 0 80px 16px #14ffe9, 0 0 240px 24px #7f5fff;
+  }
+}
+
+.input.futuristic {
+  background: rgba(255,255,255,0.07);
+  border: 1.5px solid #7f5fff55;
+  color: #fff;
+  border-radius: 0.75rem;
+  padding: 0.6rem 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 8px #7f5fff33;
+}
+.input.futuristic:focus {
+  border-color: #14ffe9;
+  box-shadow: 0 0 12px #14ffe9aa;
+}
+
+.btn {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.15s;
+  box-shadow: 0 1px 8px #7f5fff22;
+}
+.btn:active {
+  transform: scale(0.97);
+}

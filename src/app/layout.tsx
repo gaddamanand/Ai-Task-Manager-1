@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ClerkProvider, UserButton, SignedIn, SignedOut, SignOutButton } from "@clerk/nextjs";
+import { ThemeProvider } from "next-themes";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,12 +26,40 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <header className="w-full flex items-center justify-between px-4 md:px-8 py-3 bg-zinc-950/90 border-b border-zinc-800 sticky top-0 z-50 shadow-lg">
+              <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-white tracking-tight whitespace-nowrap">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" className="hidden sm:inline"><rect width="28" height="28" rx="7" fill="#6366F1"/><path d="M9 14.5L12.5 18L19 11" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <span className="">AI Task Planner</span>
+              </Link>
+              <nav className="flex items-center gap-2 md:gap-4">
+                <SignedIn>
+                  <div className="flex items-center gap-2 md:gap-4">
+                    <UserButton appearance={{ elements: { avatarBox: 'w-8 h-8 md:w-10 md:h-10' } }} />
+                    <SignOutButton redirectUrl="/">
+                      <button className="bg-red-600 text-white rounded-lg hover:bg-red-700 transition px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-base flex items-center gap-2">
+                        <span className="sm:hidden" aria-label="Sign Out">
+                          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M11 17H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M17 12l3-3m0 0l-3-3m3 3H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                        </span>
+                        <span className="hidden sm:inline">Sign Out</span>
+                      </button>
+                    </SignOutButton>
+                  </div>
+                </SignedIn>
+                <SignedOut>
+                  <Link href="/sign-in/" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm md:text-base">Sign In</Link>
+                </SignedOut>
+              </nav>
+            </header>
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
