@@ -71,7 +71,7 @@ A next-gen, open source productivity app powered by AI, voice, and beautiful UI.
 
 ## Documentation
 
-- [Landing Page](https://ai-task-planner.vercel.app)
+- [Landing Page](https://ai-task-manager-1.vercel.app)
 - [Docs](./docs/)
 - [API Reference](./docs/api.md)
 - [Contributing Guide](./docs/contributing.md)
