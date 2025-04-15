@@ -32,14 +32,14 @@ export default function VoiceInput({ onTranscribed }: { onTranscribed: (text: st
           if (!res.ok) throw new Error(data.error || "Failed to transcribe");
           setTranscript(data.transcript);
           onTranscribed(data.transcript);
-        } catch (err: any) {
-          setError(err.message || "Unknown error");
+        } catch (err) {
+          setError(err instanceof Error ? err.message : "Unknown error");
         }
       };
       mediaRecorder.start();
       setRecording(true);
-    } catch (err: any) {
-      setError(err.message || "Could not access microphone");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Could not access microphone");
     }
   }
 

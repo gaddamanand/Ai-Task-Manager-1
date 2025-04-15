@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
-import { query } from "@/db";
 import { z } from "zod";
 
 // --- Simple in-memory rate limiter (per user, per minute) ---
@@ -68,7 +67,7 @@ export async function POST(req: NextRequest) {
     });
     const text = completion.choices[0]?.message?.content?.trim() || "";
     return NextResponse.json({ suggestions: text });
-  } catch (err) {
+  } catch {
     return NextResponse.json({ error: "AI suggestion failed" }, { status: 500 });
   }
 }

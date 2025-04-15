@@ -13,7 +13,8 @@ export async function syncClerkUserToDb() {
     const email = emailAddresses?.[0]?.emailAddress || '';
     const name = [firstName, lastName].filter(Boolean).join(' ');
 
-    const result = await query(
+    // Removed unused 'result' variable
+    await query(
       `INSERT INTO users (id, email, name, image_url)
        VALUES ($1, $2, $3, $4)
        ON CONFLICT (id) DO UPDATE SET email = $2, name = $3, image_url = $4`,

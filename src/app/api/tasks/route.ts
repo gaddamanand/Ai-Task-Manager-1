@@ -70,7 +70,6 @@ export async function POST(req: NextRequest) {
   const parse = TaskSchema.safeParse(body);
   if (!parse.success) {
     if (process.env.NODE_ENV !== 'production') {
-      // eslint-disable-next-line no-console
       console.error('Task validation error:', parse.error);
     }
     return NextResponse.json({ error: "Invalid input: Please provide valid task fields.", details: process.env.NODE_ENV !== 'production' ? parse.error : undefined }, { status: 400 });

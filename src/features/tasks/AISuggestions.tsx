@@ -28,8 +28,8 @@ export default function AISuggestions({ onTaskCreated }: { onTaskCreated?: () =>
         .map((line: string) => line.replace(/^\d+\.|^- /, "").trim())
         .filter((line: string) => line.length > 0);
       setSuggestions(parsed);
-    } catch (err: any) {
-      setError(err.message || "Unknown error");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Unknown error");
     } finally {
       setLoading(false);
     }

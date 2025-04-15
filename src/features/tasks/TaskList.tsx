@@ -1,6 +1,5 @@
 "use client";
-import { useEffect, useState, Suspense, useOptimistic, startTransition, useCallback } from "react";
-import futuristicGradient from "@/assets/futuristic-gradient.module.css";
+import { useEffect, useState, useOptimistic, startTransition, useCallback } from "react";
 import TaskCard from "./TaskCard";
 import { DragDropContext, Droppable, Draggable, DropResult } from "@hello-pangea/dnd";
 
@@ -136,7 +135,7 @@ export default function TaskList() {
     const ids = groupedTasks[status]?.map(t => t.id) || [];
     setSelected(prev => {
       const next = new Set(prev);
-      let allSelected = ids.every(id => next.has(id));
+      const allSelected = ids.every(id => next.has(id));
       ids.forEach(id => allSelected ? next.delete(id) : next.add(id));
       return next;
     });

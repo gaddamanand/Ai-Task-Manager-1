@@ -13,7 +13,7 @@ export default function TasksPage() {
 
   useEffect(() => {
     if (isLoaded && !userId) router.push("/sign-in");
-  }, [userId, isLoaded]);
+  }, [userId, isLoaded, router]); // Fix useEffect dependency warning by including 'router' in the dependency array if used
 
   const handleRefresh = () => setRefreshKey(k => k + 1);
 

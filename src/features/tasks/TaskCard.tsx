@@ -1,5 +1,4 @@
 // Server Component: TaskCard
-import futuristicGradient from "@/assets/futuristic-gradient.module.css";
 import Image from "next/image";
 import { Task } from "./TaskList";
 

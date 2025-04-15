@@ -51,7 +51,7 @@ export default function Home() {
             visible: { transition: { staggerChildren: 0.12 } },
           }}
         >
-          {features.map((f, i) => (
+          {features.map((f) => (
             <Feature key={f.title} {...f} />
           ))}
         </motion.div>
